@@ -12,8 +12,8 @@ $lim=10000000000000000;
 $cases = (int)fgets($handle);
 
 		echo '<pre>';
-		print_r(number_format(factorial(30), 0, '', ''));
-		exit;
+		// print_r(number_format(factorial(30), 0, '', ''));
+		// exit;
 for($i=1; $i <= $cases; $i++) { 
 	$n = (int)fgets($handle);
 	for($j=1; $j <= $lim; $j++){

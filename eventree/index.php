@@ -12,9 +12,6 @@ for($i=1;$i<=$m;$i++){
 }
 $top = array();
 $cut = 0;
-echo '<meta charset="utf-8"><pre>';
-print_r($matrix);
-exit;
 
 foreach ($matrix as $key => $value) {
 	
@@ -22,7 +19,21 @@ foreach ($matrix as $key => $value) {
 	$even = 0;
 	foreach ($value as $k => $v) {
 		if($v%2==0){
-			$even++;
+			// $z=isCut($v, $key, $matrix);
+			// echo '<meta charset="utf-8"><pre>';
+			// print_r($z);
+			//exit;
+			if($z=isCut($v, $key, $matrix)){
+				// echo '<meta charset="utf-8"><pre>';
+				// echo '<br>';
+				// echo $v;
+				// echo '<br>';
+				// print_r($z);
+				
+				// //exit;
+				$cut++;	
+			}
+			
 		}
 	}
 	if($even>1){
@@ -30,6 +41,32 @@ foreach ($matrix as $key => $value) {
 	}
 	
 }
+echo $cut;
+function isCut($top, $root, &$matrix){
+	$c=0;
+	// echo '<meta charset="utf-8"><pre>';
+	// print_r($top);
+	// echo '<br>';
+	
+	// print_r($matrix[$top]);
+	// echo '<br>';
+	// //print_r($root);
+	// exit;
+	
+	if(isset($matrix[$top])){
+		if($top%2==0 && count($matrix[$top])>=2) return 1;
+		foreach ($matrix[$top] as $key => $value) {
+			if($value!=$root && $value%2==0){
+				$c++;
+				unset($matrix[$top][$root]);
+			}
+			if($c==1)
+				return $c;
+		}
+	}
+	return false;
+}
 
-print_r($cut);
+
+
  ?>

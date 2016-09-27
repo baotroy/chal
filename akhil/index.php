@@ -7,14 +7,14 @@ for($i=1; $i <= $cases; $i++) {
 	$n =  $ip[0];
 	$div = (int)$ip[1];
 	$lim = 10000000;
-	var_dump($n);
+	//var_dump($n);
 			echo '<meta charset="utf-8"><pre>';
-			print_r(opt($n));
-			exit;
+	//		print_r(opt($n));
+	//		exit;
 	$sep = array();
 			echo '<meta charset="utf-8"><pre>';
-			print_r($n/$lim);
-			exit;
+			// print_r($n/$lim);
+			// exit;
 	if($n > $lim){
 		
 		while ($n/$lim > 0) {
@@ -27,12 +27,12 @@ for($i=1; $i <= $cases; $i++) {
 		}
 	}
 			echo '<meta charset="utf-8"><pre>';
-			print_r($sep);
-			exit;
+			// print_r($sep);
+			// exit;
 	//$ones= str_repeat(1, );
 			echo '<meta charset="utf-8"><pre>';
-			print_r(strlen($ones));
-			exit;
+			// print_r(strlen($ones));
+			// exit;
 	echo $ones%$div."\n";
 }
 

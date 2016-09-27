@@ -41,8 +41,8 @@ function proccess($org){
  function findAll($input){
  	$divisors = proccess($input);
  			echo '<pre>';
- 			print_r($divisors);
- 			exit;
+ 			// print_r($divisors);
+ 			// exit;
  	for($i=0; $i<count($divisors); $i++){
  		for($j=0; $j<count($divisors); $j++){
  			$v = $divisors[$i]*$divisors[$j];
